@@ -6,7 +6,7 @@
 
 Author: Davion Garcia
 
-- [Pull Req 1]()
+- [Pull Req 1](https://github.com/Vektur/caps/pull/1)
 - Local Testing
 
 ## Setup
