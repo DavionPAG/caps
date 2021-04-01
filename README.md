@@ -8,6 +8,7 @@ Author: Davion Garcia
 
 - [Pull Req 1](https://github.com/Vektur/caps/pull/1)
 - Local Testing
+- Jest
 
 ## Setup
 - Node Events
@@ -15,8 +16,6 @@ Author: Davion Garcia
 ## Running the app
 
 - node caps.js
-
-
 
 ## Tests
 

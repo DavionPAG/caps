@@ -1,27 +1,30 @@
 'use strict';
 
-const events = require('./events');
+const {events} = require('./events');
 
-events.on('pickup', pickUpOrder);
+events.on('pickup', pickupOrder);
 events.on('in-transit', transitLog);
 
-
-function pickUpOrder(order) {
+function pickupOrder(order) {
     setTimeout(() => {
-        let log = `Driver: Picked up ${order}`;
-        console.log('Time: ', new Date)
-        console.log(log)
-        console.log(order)
+        
         events.emit('in-transit', order)
+        console.log({
+            Event: 'In-transit',
+            Driver: `Picked up order: ${order.orderId}`,
+            Time: new Date().toTimeString()})
     }, 1000)
 }
 
 function transitLog(order) {
     setTimeout(() => {
-        console.log('Time: ', new Date)
-        console.log('Delivered')
-        events.emit('delivered', order)
+        console.log({
+            Event: 'Delivered',
+            Driver: `Delivered order: ${order.orderId}`,
+            Time: new Date().toTimeString()
+        })
+    events.emit('delivered', order)
     }, 3000)
 }
 
-module.exports = {pickUpOrder, transitLog};
+module.exports = {pickupOrder, transitLog};
